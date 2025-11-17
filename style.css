@@ -4,10 +4,7 @@ h1 {
 
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 0 20px;
 }
 
 #navbar {
@@ -15,11 +12,6 @@ body {
   top: 0;
   overflow: hidden;
   background-color: #333;
-}
-
-/* Page content */
-.content {
-  padding: 16px;
 }
 
 /* Style the navbar */
@@ -43,7 +35,6 @@ body {
   text-align: center;
   padding: 20px;
   text-decoration: none;
-    border-radius: 20px; /* Optional: Rounded corners */
 }
 
 #navbar a:hover {
@@ -51,7 +42,7 @@ body {
     background-color: black;
 }
 
-
-@media screen {
-    
+img {
+    width: 80%;
+    align-self: center;
 }
