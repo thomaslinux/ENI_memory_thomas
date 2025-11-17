@@ -1,3 +1,26 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 h1 {
     color: red;
+}
+
+.bandeau {
+    display: flex;
+    justify-content: center;
+}
+
+.bandeau button {
+    background-color: darkgreen;
+    width: 150px;
+    border:none;
+    height: 100px;
+    color:white;
+}
+
+.bandeau button:hover {
+    background-color: black;
+    color:white;
+    transition: 0.1ms;
 }
