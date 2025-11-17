@@ -1,0 +1,89 @@
+/*
+    CSS à compléter
+*/
+
+header {
+    height: 50px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+
+fieldset {
+    border-radius: 20px;
+    display: flex;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    /* text-align: right; */
+    margin: 10px;
+}
+
+button {
+    width: 120px;
+    height: 40px;
+}
+
+.champs input:hover {
+    border-color: red;
+}
+
+.champs input {
+    min-width: 200px;
+    margin: 5px;
+    border: 2px solid rgb(105, 105, 105);
+    border-radius: 8px;
+    padding: 10px 10px;
+}
+
+.champs label {
+    text-align: right;
+    margin: 20px;
+}
+
+.btn {
+    text-align: center;
+    border: currentColor;
+    border-radius: 6px;
+    /* padding: 10px 10px; */
+}
+
+
+
+.btn:hover {
+    background-color: black !important;
+    color: white;
+    font-size: large;
+}
+
+#btnAccueil {
+    background-color: grey;
+}
+
+#submit {
+    background-color: green;
+}
+
+#reset {
+    background-color: red;
+}
+
+.radio {
+    align-items: right;
+}
+
+.center {
+    margin: 10px;
+   text-align: center;
+}
+
+
+br {
+    /* display: none; */
+}

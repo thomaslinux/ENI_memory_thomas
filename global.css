@@ -7,6 +7,10 @@ body {
     padding: 0 20px;
 }
 
+#current_page {
+    background-color: darkred;
+}
+
 #navbar {
   position: sticky;
   top: 0;
