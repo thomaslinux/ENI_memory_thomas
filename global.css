@@ -1,52 +1,77 @@
 h1 {
-    color: red;
+  color: red;
 }
 
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    padding: 0 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;  */
 }
+head {
+  /* align-items: right; */
+}
+
+
 
 #current_page {
-    background-color: darkred;
+  background-color: darkred;
 }
 
 #navbar {
-  position: sticky;
-  top: 0;
-  overflow: hidden;
-  background-color: #333;
-}
+  margin-bottom: 2rem;
 
-/* Style the navbar */
-#navbar {
-  position: sticky;
   top: 0;
   overflow: hidden;
   background-color: #333;
   display: flex;
   width: 100%;
   /* padding: 0px 20px; */
+  text-wrap-mode: nowrap;
 }
 
 /* Navbar links */
 #navbar a {
-    flex:1;
+  flex: 1;
   float: left;
   justify-content: center;
-  /* display: block; */
+  display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 20px;
+  padding: 1rem;
   text-decoration: none;
 }
 
 #navbar a:hover {
-    cursor: pointer;
-    background-color: black;
+  cursor: pointer;
+  background-color: black;
 }
 
 img {
-    width: 80%;
-    align-self: center;
+  width: 40rem;
+  max-width: 80%;
+  padding: 1rem;
+}
+
+@media screen and (min-width:640px) {
+  #navbar {
+  position: sticky;
+  }
+}
+
+@media screen and (max-width:640px) {
+  #navbar {
+    flex-direction: column;
+  }
+  #navbar a{
+
+    text-align: left;
+    /* justify-content: left; */
+  }
+  img {
+    padding: 1rem;
+    width: 100%;
+  }
+
 }
