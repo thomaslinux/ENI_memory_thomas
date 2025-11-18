@@ -13,6 +13,8 @@
     transition: width 0.3s;
 }
 
+
+/*stylisé les champs vert le mot de passe de manière un peu moderne*/
 label {
     /* padding: 1rem; */
     display: block;
@@ -34,6 +36,6 @@ input:focus {
     border-bottom-color: #bd0000;
 }
 
-br {
+br { /*cacher les br du html pour éviter les espaces vides*/
     display:none;
 }

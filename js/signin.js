@@ -5,7 +5,7 @@ const faible = document.getElementById("faible")
 const moyen = document.getElementById("moyen")
 const fort = document.getElementById("fort")
 
-debug.innerText = "placeholder"
+// debug.innerText = "placeholder"
 mdp.addEventListener("input", verifMDP(mdp))
 
 /**
@@ -22,7 +22,7 @@ function verifMDP() {
     compteurConditions += verifLongueurMDP(9);
     barDeForce(compteurConditions)
 
-    debug.innerText = mdp.value + " " + compteurConditions; // affiche le nb de conditions remplies pour le mdp
+    // debug.innerText = mdp.value + " " + compteurConditions; // affiche le nb de conditions remplies pour le mdp
     // Faible = 1
     // dès qu'il fait 6 caractères et checkmark en bout de la ligne (score de 1)
     // Moyen = 1<score<4
@@ -39,18 +39,16 @@ function verifMDP() {
  */
 function barDeForce(compteurConditions) {
     const progressBar = document.getElementById("progressBar")
-    progressBar.style.width = compteurConditions*1.5 + "%"
+    progressBar.style.width = compteurConditions * 1.5 + "%"
     if (compteurConditions > 30) {
         progressBar.style.backgroundColor = "red";
     }
-
     else if (compteurConditions > 20) {
         progressBar.style.backgroundColor = "darkorange";
     }
-
     else {
-         progressBar.style.backgroundColor = "hsla(56, 100%, 44%, 1.00)"; 
-        }
+        progressBar.style.backgroundColor = "hsla(56, 100%, 44%, 1.00)";
+    }
 }
 
 
@@ -61,7 +59,7 @@ function barDeForce(compteurConditions) {
  * @param {*} mdp l'élément html dans la value est testée
  * @returns 
  */
-function verifRegex(regex, elementId,mdp) {
+function verifRegex(regex, elementId, mdp) {
     // let score = mdp.value.match(regex) + ""
     // let verif = score.length>0;
     let verif = regex.test(mdp.value);
