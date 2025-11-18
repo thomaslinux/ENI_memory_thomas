@@ -33,6 +33,7 @@ input {
 input:focus {
     border-bottom-color: #bd0000;
 }
+
 br {
     display:none;
 }
