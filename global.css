@@ -9,11 +9,6 @@ body {
   flex-direction: column;
   /* align-items: center;  */
 }
-head {
-  /* align-items: right; */
-}
-
-
 
 #current_page {
   background-color: darkred;
@@ -63,6 +58,7 @@ img {
 @media screen and (max-width:640px) {
   #navbar {
     flex-direction: column;
+    /* display: none; */
   }
   #navbar a{
 
