@@ -10,49 +10,33 @@
 </head>
 
 <body>
-    <h1>ENI MEMORY</h1>
-
-    <!-- https://www.w3schools.com/howto/howto_js_navbar_sticky.asp -->
-    <div id="navbar">
-        <a href="index.html">Accueil</a>
-        <a id="current_page" href="signin.html">S'inscrire</a>
-        <a href="login.html">Se connecter</a>
-        <a href="#profil">Profil</a>
-        <a href="play.html">Jouer</a>
-    </div>
-
+    <header>
+        <h1>ENI MEMORY</h1>
+        <!-- https://www.w3schools.com/howto/howto_js_navbar_sticky.asp -->
+        <div id="navbar">
+            <a href="index.html">Accueil</a>
+            <a id="current_page" href="signin.html">S'inscrire</a>
+            <a href="login.html">Se connecter</a>
+            <a href="profile.html">Profil</a>
+            <a href="play.html">Jouer</a>
+        </div>
+    </header>
     <main>
         <fieldset>
             <legend>Formulaire</legend>
             <form action="#" method="post">
                 <div class="champs">
-
-                    <!-- <div id="login"> -->
-                    <!-- <label for="login">Login* :</label>
-                    <input type="text" name="login" id="login" required placeholder="nom_utilisateur"
-                        title="Votre nom d'utilisateur" pattern="[A-Za-z0-9]{3,}">    
-                    <br> -->
-                    <!-- </div> -->
-                    <!-- <div id="email"> -->
-
-                        <label for="email">email :</label>
-                        <input type="text" name="email" id="email" placeholder="toto@email.fr" title="Votre adresse email"
+                    <label for="email">email :</label>
+                    <input type="text" name="email" id="email" placeholder="toto@email.fr" title="Votre adresse email"
                         pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
-                        <br>
-                    <!-- </div> -->
-                    <!-- <div id="password"> -->
-
-                        <label for="password">Mot de passe* :</label>
-                        <input type="password" name="password" id="password" required placeholder="mot_de_passe">
-                        <br>
-                    <!-- </div> -->
-                    <!-- <div id="verif_password"> -->
-
-                        <!-- verif. mot de passe -->
-                        <label for="verif_password">Verif Mot de passe* :</label>
-                        <input type="password" name="verif_password" id="verif_password" required placeholder="mot_de_passe">
-                        <br>
-                    <!-- </div>  -->
+                    <br>
+                    <label for="password">Mot de passe* :</label>
+                    <input type="password" name="password" id="password" required placeholder="mot_de_passe">
+                    <br>
+                    <label for="verif_password">Verif Mot de passe* :</label>
+                    <input type="password" name="verif_password" id="verif_password" required
+                        placeholder="mot_de_passe">
+                    <br>
                 </div>
                 <legend class="center">*Champ obligatoire
                     <br><br>
@@ -62,7 +46,6 @@
             </form>
         </fieldset>
     </main>
-
 </body>
 
 </html>
