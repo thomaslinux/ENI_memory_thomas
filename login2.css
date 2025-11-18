@@ -1,0 +1,12 @@
+.bar-container {
+    width: 100%;
+    border-radius: 1rem;
+    background-color: #e0e0e0;
+}
+
+.bar {
+    height: 1rem;
+    width: 0; /* Commence vide */
+    background-color: #777; /* Couleur par défaut */
+    transition: width 0.3s; /* Animation de transition */
+}

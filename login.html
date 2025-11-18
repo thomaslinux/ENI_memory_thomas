@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENI MEMORY login</title>
     <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="login.css">
+    <!-- <link rel="stylesheet" href="login.css"> -->
 </head>
 
 <body>
@@ -37,6 +37,7 @@
                     <!-- <div id="email"> -->
 
                         <label for="email">email :</label>
+                        <br>
                         <input type="text" name="email" id="email" required placeholder="toto@email.fr" title="Votre adresse email"
                         pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                         <br>
@@ -44,6 +45,7 @@
                     <!-- <div id="password"> -->
 
                         <label for="password">Mot de passe :</label>
+                        <br>
                         <input type="password" name="password" id="password" required placeholder="mot_de_passe">
                         <br>
                     <!-- </div> -->
@@ -55,10 +57,12 @@
                         <br> -->
                     <!-- </div>  -->
                 </div>
-                <legend class="center">
+                <br>
+                <div class="center">
                     Votre compte n'existe pas ? 
                     <a href="signin.html">S'inscrire</a>
-                </legend>
+                </div>
+                
             </form>
         </fieldset>
     </main>
