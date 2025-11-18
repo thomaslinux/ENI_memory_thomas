@@ -11,11 +11,13 @@ function verifMDP() {
     let compteurConditions = 0;
     compteurConditions += verifLongueurMDP(6);
     // mot de passe faible
-    compteurConditions += verifRegex(/[a-z]+$/, "minuscule");
+    compteurConditions += verifRegex(/[a-z]/, "minuscule");
     // verif5Conditions += verifRegex(/[A-Z]/, "majuscule");
-    compteurConditions += verifRegex(/[0-9]+$/, "chiffre");
-    compteurConditions += verifRegex(/[^a-zA-Z0-9]+$/, "symbole"); // Le caractère ajouté n'est ni un chiffre ni une lettre
+    compteurConditions += verifRegex(/[0-9]/, "chiffre");
+    compteurConditions += verifRegex(/[^a-zA-Z0-9]/, "symbole"); // Le caractère ajouté n'est ni un chiffre ni une lettre
     compteurConditions += verifLongueurMDP(9);
+    barDeForce(compteurConditions)
+
     debug.innerText = mdp.value + " " + compteurConditions; // affiche le nb de conditions remplies pour le mdp
     // Faible = 1
     // dès qu'il fait 6 caractères et checkmark en bout de la ligne (score de 1)
@@ -27,14 +29,32 @@ function verifMDP() {
 }
 
 
+function barDeForce(compteurConditions) {
+    const progressBar = document.getElementById("progressBar")
+    progressBar.style.width = compteurConditions*1.5 + "%"
+    if (compteurConditions > 30) {
+        progressBar.style.backgroundColor = "red";
+    }
 
+    else if (compteurConditions > 20) {
+        progressBar.style.backgroundColor = "darkorange";
+    }
+
+    else {
+         progressBar.style.backgroundColor = "hsla(56, 100%, 44%, 1.00)"; 
+        }
+}
 
 function verifRegex(regex, elementId) {
+    // let score = mdp.value.match(regex) + ""
+    // let verif = score.length>0;
+    let verif = regex.test(mdp.value);
     // console.log(regex.test(mdp.value) + " " + elementId);
-    console.log(mdp.value.match(regex) + " " + elementId);
-    return regex.test(mdp.value) ? 1 : 0;
+    // console.log(score + " " + elementId + verif);
+    return verif ? 10 : 0;
 }
 
 function verifLongueurMDP(MAX) {
-    return mdp.value.length >= MAX ? 1 : 0;
+    let score = mdp.value.length;
+    return score >= MAX ? 10 : 0;
 }
