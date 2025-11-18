@@ -1,15 +1,8 @@
-/*
-    CSS à compléter
-*/
-
-header {
-    height: 50px;
-}
-
 main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 100px;
 }
 
@@ -45,6 +38,7 @@ button {
 .champs label {
     text-align: right;
     margin: 20px;
+    min-width: 200px;
 }
 
 .btn {
@@ -55,6 +49,10 @@ button {
 }
 
 
+.center {
+    margin: 10px;
+   text-align: center;
+}
 
 .btn:hover {
     background-color: black !important;
@@ -78,12 +76,4 @@ button {
     align-items: right;
 }
 
-.center {
-    margin: 10px;
-   text-align: center;
-}
 
-
-br {
-    /* display: none; */
-}
