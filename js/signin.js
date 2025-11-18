@@ -6,7 +6,11 @@ const moyen = document.getElementById("moyen")
 const fort = document.getElementById("fort")
 
 debug.innerText = "placeholder"
-mdp.addEventListener("input", verifMDP)
+mdp.addEventListener("input", verifMDP(mdp))
+
+/**
+ * @void calcule la complexité du mot de passe
+ */
 function verifMDP() {
     let compteurConditions = 0;
     compteurConditions += verifLongueurMDP(6);
@@ -28,7 +32,11 @@ function verifMDP() {
     // (4 pts)
 }
 
-
+/**
+ * 
+ * @param {Number} compteurConditions le score de complexité du mot de passe calculé dans la fonction verifMDP
+ * @void modifie la couleur de la progressBar du mot de passe
+ */
 function barDeForce(compteurConditions) {
     const progressBar = document.getElementById("progressBar")
     progressBar.style.width = compteurConditions*1.5 + "%"
@@ -45,7 +53,15 @@ function barDeForce(compteurConditions) {
         }
 }
 
-function verifRegex(regex, elementId) {
+
+/**
+ * 
+ * @param {regex} regex une expression regex testée sur la value de mdp
+ * @param {*} elementId le nom du test pour la console
+ * @param {*} mdp l'élément html dans la value est testée
+ * @returns 
+ */
+function verifRegex(regex, elementId,mdp) {
     // let score = mdp.value.match(regex) + ""
     // let verif = score.length>0;
     let verif = regex.test(mdp.value);
@@ -54,6 +70,11 @@ function verifRegex(regex, elementId) {
     return verif ? 10 : 0;
 }
 
+/**
+ * 
+ * @param {Number} MAX la longueur a dépasser pour valider la condition
+ * @returns 
+ */
 function verifLongueurMDP(MAX) {
     let score = mdp.value.length;
     return score >= MAX ? 10 : 0;
