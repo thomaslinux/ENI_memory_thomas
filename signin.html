@@ -15,8 +15,8 @@
     <!-- https://www.w3schools.com/howto/howto_js_navbar_sticky.asp -->
     <div id="navbar">
         <a href="index.html">Accueil</a>
-        <a href="signin.html">S'inscrire</a>
-        <a id="current_page" href="login.html">Se connecter</a>
+        <a id="current_page" href="signin.html">S'inscrire</a>
+        <a href="login.html">Se connecter</a>
         <a href="#profil">Profil</a>
         <a href="play.html">Jouer</a>
     </div>
@@ -36,32 +36,32 @@
                     <!-- <div id="email"> -->
 
                         <label for="email">email :</label>
-                        <input type="text" name="email" id="email" required placeholder="toto@email.fr" title="Votre adresse email"
+                        <input type="text" name="email" id="email" placeholder="toto@email.fr" title="Votre adresse email"
                         pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                         <br>
                     <!-- </div> -->
                     <!-- <div id="password"> -->
 
-                        <label for="password">Mot de passe :</label>
+                        <label for="password">Mot de passe* :</label>
                         <input type="password" name="password" id="password" required placeholder="mot_de_passe">
                         <br>
                     <!-- </div> -->
                     <!-- <div id="verif_password"> -->
 
                         <!-- verif. mot de passe -->
-                        <!-- <label for="verif_password">Verif Mot de passe* :</label>
+                        <label for="verif_password">Verif Mot de passe* :</label>
                         <input type="password" name="verif_password" id="verif_password" required placeholder="mot_de_passe">
-                        <br> -->
+                        <br>
                     <!-- </div>  -->
                 </div>
-                <legend class="center">
-                    Votre compte n'existe pas ? 
-                    <a href="signin.html">S'inscrire</a>
+                <legend class="center">*Champ obligatoire
+                    <br><br>
+                    Votre compte existe déjà ? <br>
+                    <a href="login.html">Se connecter</a>
                 </legend>
             </form>
         </fieldset>
     </main>
-    
 
 </body>
 
