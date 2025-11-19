@@ -57,9 +57,18 @@ function melangeTab(tab) {
  * @todo fait une animation au remplacement de l'image
  */
 function imageReplace(e) {
-    $(e.target).attr("src", themePack + tab[$(e.target).attr("id")] + extensionPack);
-    console.log("src", themePack + tab[$(e.target).attr("id")] + extensionPack);
-    // $(e.target).attr("src", "ressources/animaux/1.webp");
-    //Supprime l'évènement
-    $(e.currentTarget).off("click");
+    // console.log("src", themePack + tab[$(e.target).attr("id")] + extensionPack);
+    if ($(e.target).attr("src")=="ressources/question.svg") {
+        $(e.target).attr("src", themePack + tab[$(e.target).attr("id")] + extensionPack);
+    } else {
+
+        $(e.target).attr("src", "ressources/question.svg");
+    };
 }
+let lastTarget;
+// si la valeur a l'élément cliqué est différent de l'élément précédemment cliqué,
+// remplacer les images des deux éléments par le ?
+// augmenter le nb de coups de 1
+// sinon
+// augmenter le score de 1
+// augmenter le nb de coups de 1
