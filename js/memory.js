@@ -7,6 +7,16 @@ function entierAleatoire(MIN, MAX) {
     return Math.floor(Math.random() * (MAX - MIN) + MIN);
 }
 
+console.log("ici")
+let tab = new Array(16);
+tab.fill(0);
+console.log(tab);
+tab = tableauPaires(tab);
+console.log(tab);
+tab = melangeTab(tab);
+console.log(tab);
+const themePack = "ressources/animaux/";
+const extensionPack = ".webp";
 /**
  * NIVEAU 1 : Fonction d'initialisation
  */
@@ -16,23 +26,15 @@ $(function () {
     $('img').attr("src", "ressources/question.svg")
     $('img').click(imageReplace);
 });
-console.log("ici")
-let tab = new Array(16);
-tab.fill(0);
-console.log(tab);
-tab = tableauPaires(tab);
-console.log(tab);
-tab = melangeTab(tab);
-console.log(tab);
 
 /**
- * Rempli un tableau de 0 à sa taille par 2 fois les nombres.
+ * Remplir un tableau tab par 2 fois les nombres de 1 à tab.length/2
  */
 function tableauPaires(tab) {
     let longueur = tab.length;
-    for (i=0;i<longueur;i++) {
-        tab[i]=i;
-        tab[longueur-1-i]=i;
+    for (i=0;i<longueur/2;i++) {
+        tab[i]=i+1;
+        tab[longueur-1-i]=i+1;
     }
     return tab;
 }
@@ -55,9 +57,8 @@ function melangeTab(tab) {
  * @todo fait une animation au remplacement de l'image
  */
 function imageReplace(e) {
-    //Met la croix dans l'image dans la zone cliquée.
-    $(e.target).attr("src", "ressources/animaux/" + tab[$(e.target).attr("id")] + ".webp");
-    console.log($(e.target).attr("id")+1);
+    $(e.target).attr("src", themePack + tab[$(e.target).attr("id")] + extensionPack);
+    console.log("src", themePack + tab[$(e.target).attr("id")] + extensionPack);
     // $(e.target).attr("src", "ressources/animaux/1.webp");
     //Supprime l'évènement
     $(e.currentTarget).off("click");
