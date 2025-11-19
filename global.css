@@ -57,8 +57,9 @@ img {
 
 @media screen and (max-width:640px) {
   #navbar {
-    flex-direction: column;
+    /* flex-direction: column; */
     /* display: none; */
+    text-wrap-mode: wrap;
   }
   #navbar a{
 
