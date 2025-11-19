@@ -29,24 +29,21 @@ main {
     align-items: center;
 }
 
+
 img {
     height: 10vh;
     width: 10vh;
-    background-color: rgba(200, 200, 200, 0.2);
+    padding: 1vh;
+    background-color: darkred;
     text-align: center;
-    border: 3px solid rgb(255, 0, 0);
-    border-collapse: collapse;
     cursor: pointer;
+    border-radius: 15%; 
 }
 
 img:hover {
-    border: 3px black solid;
+    background-color: black;
 }
 
-/* img {
-    height: 100%;
-    width: 100%;
-} */
 
 /* section {
     margin-top: 10vh;
