@@ -1,14 +1,24 @@
 const mdp = document.getElementById("password")
 const login = document.getElementById("login")
 const force = document.getElementById("force")
-const faible = document.getElementById("faible")
-const moyen = document.getElementById("moyen")
-const fort = document.getElementById("fort")
 
 force.innerText = ""
 mdp.addEventListener("input", verifMDP)
 // mdp.addEventListener("input", verifMDP) // ne pas modifier
+const showPasswordCheckbox = document.getElementById("show-password");
+const checkboxLabel = document.getElementById("checkbox-label");
 
+showPasswordCheckbox.addEventListener("change", afficheMDP);
+
+function afficheMDP() {
+    if (showPasswordCheckbox.checked) {
+        mdp.type = "text";
+        // checkboxLabel.textContent = "Masquer le mot de passe";
+    } else {
+        mdp.type = "password";
+        // checkboxLabel.textContent = "Afficher le mot de passe";
+    }
+}
 /**
  * @void calcule la complexité du mot de passe
  */

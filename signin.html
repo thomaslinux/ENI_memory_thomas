@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENI MEMORY login</title>
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/login2.css">
+    <!-- <link rel="stylesheet" href="css/login2.css"> -->
+    <link rel="stylesheet" href="css/login3.css">
 </head>
 
 <body>
@@ -29,21 +30,25 @@
                     <label for="login">Login (obligatoire)</label>
                     <br>
                     <input type="text" name="login" id="login" required placeholder="nom_utilisateur"
-                        title="3 caractères minimum que des chiffres ou lettres miniscules ou majuscules" pattern="[A-Za-z0-9]{3,}">
+                        title="3 caractères minimum que des chiffres ou lettres miniscules ou majuscules"
+                        pattern="[A-Za-z0-9]{3,}">
                     <br>
                     <label for="email">email :</label>
                     <br>
-                    <input type="text" name="email" id="email" placeholder="toto@email.fr" title="Votre adresse email"
-                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                    <input type="email" name="email" id="email" required placeholder="toto@email.fr"
+                        title="Votre adresse email">
                     <br>
                     <label for="password" value="toto">Mot de passe (obligatoire)</label>
                     <br>
                     <input type="password" name="password" id="password" required placeholder="mot_de_passe">
-                    <br>
+                    <div id="show_password">
+                        <input type="checkbox" id="show-password"><label for="show-password" id="checkbox-label">Afficher le mot de passe</label>
+                        <br>
+                    </div>
                     <label for="verif_password">Vérification mot de passe (obligatoire)</label>
                     <br>
-                    <input type="password" name="verif_password" id="verif_password" required
-                        placeholder="mot_de_passe" value="">
+                    <input type="password" name="verif_password" id="verif_password" required placeholder="mot_de_passe"
+                        value="">
                     <br>
                     <label>Force du mot de passe : <span id="force"></span></label>
                     <div class="bar-container">
@@ -52,16 +57,17 @@
                 </div>
                 <br>
                 <div id="debug"></div>
-                <button class="btn" id="submit" type="submit">Valider</button>
                 <div class="center">
+                    <br>
+                    <button class="btn" id="submit" type="submit">S'inscrire</button>
                     <br><br>
                     Votre compte existe déjà ? <br>
                     <a href="login.html">Se connecter</a>
                 </div>
             </form>
             <!-- <section class="infos"> -->
-                <!-- <h2>Consignes du mot de passe :</h2> -->
-                <!-- <ul>
+            <!-- <h2>Consignes du mot de passe :</h2> -->
+            <!-- <ul>
             <li id="minuscule">Doit comporter une minuscule</li>
             <li id="majuscule">Doit comporter une majuscule</li>
             <li id="chiffre">Doit comporter un chiffre</li>
