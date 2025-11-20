@@ -22,12 +22,13 @@ body {
 } */
 
 
-body {
+main {
     display: flex;
     justify-content: center;
     align-items: center;
+        flex-direction: column;  /* Aligne les éléments en colonne */
+            justify-content: flex-start; /* Aligne les éléments au début de la colonne */
 }
-
 
 img {
     height: 15vh;
