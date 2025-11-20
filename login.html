@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENI MEMORY login</title>
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/login2.css">
+    <link rel="stylesheet" href="css/login3.css">
 </head>
 
 <body>
@@ -34,41 +34,36 @@
                         title="Votre nom d'utilisateur" pattern="[A-Za-z0-9]{3,}">    
                     <br> -->
                     <!-- </div> -->
-                    <!-- <div id="email"> -->
-
-                        <label for="email">email :</label>
-                        <br>
-                        <input type="text" name="email" id="email" required placeholder="toto@email.fr" title="Votre adresse email"
-                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
-                        <br>
-                    <!-- </div> -->
-                    <!-- <div id="password"> -->
-
-                        <label for="password">Mot de passe :</label>
-                        <br>
+                    <label for="email">email :</label>
+                    <br>
+                    <input type="email" name="email" id="email" required placeholder="toto@email.fr"
+                        title="Votre adresse email">
+                    <br>
+                    <label for="password">Mot de passe :</label>
+                    <br>
+                    <div>
                         <input type="password" name="password" id="password" required placeholder="mot_de_passe">
-                        <br>
-                    <!-- </div> -->
-                    <!-- <div id="verif_password"> -->
-
-                        <!-- verif. mot de passe -->
-                        <!-- <label for="verif_password">Verif Mot de passe* :</label>
-                        <input type="password" name="verif_password" id="verif_password" required placeholder="mot_de_passe">
-                        <br> -->
-                    <!-- </div>  -->
+                        <div id="show_password">
+                            <input type="checkbox" id="show-password"><label for="show-password"
+                                id="checkbox-label">Afficher le mot de passe</label>
+                            <br>
+                        </div>
+                    </div>
+                    <br>
                 </div>
                 <br>
                 <div class="center">
+                    <button class="btn" id="submit" type="submit">Se connecter</button>
                     <p>Votre compte n'existe pas ? </p>
                     <br>
                     <a href="signin.html">S'inscrire</a>
                 </div>
-                
+
             </form>
         </fieldset>
     </main>
-    
 
+    <script src="js/login.js"></script>
 </body>
 
 </html>
