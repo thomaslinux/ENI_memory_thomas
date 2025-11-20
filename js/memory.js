@@ -1,11 +1,4 @@
-/**
- * @param {Number} MIN valeur minimum du nombre aléatoire (inclue)
- * @param {Number} MAX valeur maximum du nombre aléatoire (excluse)
- * @returns {Number} un entier aléatoire entre une valeur MIN (inclue) et une valeur MAX (exclue)
- */
-function entierAleatoire(MIN, MAX) {
-    return Math.floor(Math.random() * (MAX - MIN) + MIN);
-}
+let score = document.getElementById("score");
 
 console.log("ici")
 let tab = new Array(16);
@@ -20,11 +13,15 @@ const extensionPack = ".webp";
 /**
  * NIVEAU 1 : Fonction d'initialisation
  */
-$(function () {
-    //initialise le tableau des cases vides
-    //associe un évènement à tous les td
-    $('img').attr("src", "ressources/question.svg")
-    $('img').click(imageReplace);
+document.addEventListener("DOMContentLoaded", function () {
+    // Sélectionne toutes les images
+    const images = document.querySelectorAll("img");
+
+    // Modifie l'attribut src de chaque image
+    images.forEach(function (img) {
+        img.src = "ressources/question.svg";
+        img.addEventListener("click", imageReplace);
+    });
 });
 
 /**
@@ -32,9 +29,9 @@ $(function () {
  */
 function tableauPaires(tab) {
     let longueur = tab.length;
-    for (i=0;i<longueur/2;i++) {
-        tab[i]=i+1;
-        tab[longueur-1-i]=i+1;
+    for (i = 0; i < longueur / 2; i++) {
+        tab[i] = i + 1;
+        tab[longueur - 1 - i] = i + 1;
     }
     return tab;
 }
@@ -51,21 +48,50 @@ function melangeTab(tab) {
     return tab;
 }
 
+let paireJouee = []; // tableau qui stocke les cartes jouées
+let pairesTrouvees = 0;
+let nbCoups = 0;
 /**
  * 
  * @param {*} e sur l'élément clické, remplace l'image
  * @todo fait une animation au remplacement de l'image
+ * @todo ne plus utiliser jQuery
  */
-function imageReplace(e) {
-    // console.log("src", themePack + tab[$(e.target).attr("id")] + extensionPack);
-    if ($(e.target).attr("src")=="ressources/question.svg") {
-        $(e.target).attr("src", themePack + tab[$(e.target).attr("id")] + extensionPack);
-    } else {
+function imageReplace() {
+    // récupère l'id du target courant
+    nbCoups++;
+    let currentID = this.id;
+    console.log("currentID = " + currentID);
+    document.getElementById(currentID).src = themePack + tab[currentID] + extensionPack;
+    console.log("currentTarget : " + this.src)
+    if (paireJouee[paireJouee.length - 1] == currentID) { // empeche de jouer deux fois la dernière carte
+        console.log("carte déjà jouée = " + currentID)
+    }
+    else {
+        paireJouee.push(currentID);
+    }
+    console.log(paireJouee);
+    if (paireJouee.length==2) {
+        let derniereCarte = document.getElementById(paireJouee[paireJouee.length - 1]);
+        let avantDernierCarte = document.getElementById(paireJouee[paireJouee.length - 2]);
+        if (derniereCarte.src == avantDernierCarte.src) { // 
+            pairesTrouvees++;
+            derniereCarte.removeEventListener("input",imageReplace);
+            avantDernierCarte.removeEventListener("input",imageReplace);
+        } else { // remet les cartes 
+            // Remettre les images d'origine après un délai
+                setTimeout(() => {
+                    derniereCarte.src = "ressources/question.svg";
+                    avantDernierCarte.src = "ressources/question.svg";
+                }, 500); // Délai de 1 seconde
+        }
+        paireJouee = []; // vide le tableau s'il est de taille 2
+    }
 
-        $(e.target).attr("src", "ressources/question.svg");
-    };
+score.innerText = "Score : Paires trouvées : " + pairesTrouvees + " en " + nbCoups + " clicks.";
 }
-let lastTarget;
+// var lastTarget;
+// var nbCoup = 0;
 // si la valeur a l'élément cliqué est différent de l'élément précédemment cliqué,
 // remplacer les images des deux éléments par le ?
 // augmenter le nb de coups de 1
