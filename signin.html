@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENI MEMORY login</title>
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="login2.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login2.css">
 </head>
 
 <body>
@@ -43,9 +43,9 @@
                     <label for="verif_password">Vérification mot de passe (obligatoire)</label>
                     <br>
                     <input type="password" name="verif_password" id="verif_password" required
-                        placeholder="mot_de_passe">
+                        placeholder="mot_de_passe" value="">
                     <br>
-                    <label>Force du mot de passe :</label>
+                    <label>Force du mot de passe : <span id="force"></span></label>
                     <div class="bar-container">
                         <div id="progressBar" class="bar"></div>
                     </div>
