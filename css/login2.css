@@ -15,12 +15,7 @@
 
 
 /*stylisé les champs vert le mot de passe de manière un peu moderne*/
-label {
-    /* padding: 1rem; */
-    display: block;
-    margin-top: 1rem;
-    /* margin-bottom: 0rem; */
-}
+
 
 input {
     border: none;
@@ -38,4 +33,20 @@ input:focus {
 
 br { /*cacher les br du html pour éviter les espaces vides*/
     display:none;
+}
+
+button {
+    width: 100px;
+    background: none;
+    /* background-color: rgba(255, 255, 255, 0.6); */
+    border: none;
+    /* border-radius: 5px; */
+}
+
+/* button img {
+    width: 100%;
+} */
+
+button:hover {
+    cursor: pointer;
 }
