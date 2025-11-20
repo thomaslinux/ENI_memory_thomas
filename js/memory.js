@@ -83,7 +83,7 @@ function imageReplace() {
                 setTimeout(() => {
                     derniereCarte.src = "ressources/question.svg";
                     avantDernierCarte.src = "ressources/question.svg";
-                }, 500); // Délai de 1 seconde
+                }, 1000); // Délai de 1 seconde
         }
         paireJouee = []; // vide le tableau s'il est de taille 2
     }
